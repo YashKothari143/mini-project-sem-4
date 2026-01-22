@@ -1,0 +1,26 @@
+.background {
+    background-image: url("./images/lampbackground_dark.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+.lamp{
+    position: absolute;
+   width: 300px;
+   height: auto;
+   left: 40.65%;
+   bottom: 74%;
+}
+.background.light{
+     background-image: url("./images/lampbackground_light.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+
+
+}
+.background.light .lamp {
+    opacity: 0;
+}
