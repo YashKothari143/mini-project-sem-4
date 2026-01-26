@@ -1,42 +1,20 @@
-/* clickable lamp part hai ye on and off */
-.background {
-    background-image: url("./images/lampbackground_dark.jpeg");
+.backgroundsignup{
+       background-image: url("./images/lampbackground_light.jpeg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 100vh;
 }
-.lamp{
-    position: absolute;
-   width: 300px;
-   height: auto;
-   left: 40.65%;
-   bottom: 74%;
-}
-.background.light{
-     background-image: url("./images/lampbackground_light.jpeg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-
-
-}
-.background.light .lamp {
-    opacity: 0;
-}
-/* 
-this is the login part in centre */
-.login_palete {
-  position: absolute;
+.signup_palete {
+     position: absolute;
     top: 48%;
     left: 50.5%;
     height: auto;
     width: 400px;
 
     transform: translate(-50%, -45%);
-      visibility: hidden;
-    pointer-events: none;
+      visibility: visible;
+    pointer-events: auto;
 
     transform: translate(-50%, -55%) scale(0.95);
     transition: transform 0.35s ease;
@@ -46,18 +24,10 @@ this is the login part in centre */
     border-radius: 12px;
     border-color: rgb(37, 71, 37);
     border:4px solid rgb(49, 87, 54);
-    backdrop-filter: blur(6px);
-    
+    backdrop-filter: blur(6px); 
 }
 
-.background.light .login_palete {
-     visibility: visible;
-    pointer-events: auto;
-    transform: translate(-50%, -50%) scale(1);
-    backdrop-filter: blur(6px);
-}
-
-.inputlogin{
+.inputsignup{
     background-color:#E6F2EC;  
     color: #2C2C2C;     
     -webkit-text-fill-color: #2C2C2C;          
@@ -84,18 +54,18 @@ input[type="submit"]:hover {
     background-color: #3E5F42;
 }
 
-input.inputlogin:focus{
+input.inputsignup:focus{
      border-color: #6B7A3C;
 
 }
 
-.login_contents{
+.signup_contents{
     display: flex;
     flex-direction: column;   
     align-items: stretch;
 }
 
-.userlogintext {
+.usersignuptext {
     display: block;
     width: 100%;
     text-align: center;
@@ -114,23 +84,12 @@ input.inputlogin:focus{
 
 }
 
-input.inputlogin::placeholder {
+input.inputsignup::placeholder {
     font-size: x-small;
     opacity: 0.6;
     color: #6E6E6E;   /* optional but recommended */
 }
 
-
-/* sign up page part */
-
-
-.backgroundsignup{
-     background-image: url("./images/lampbackground_light.jpeg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-}
 .signuppage{
     margin-top: 10px;
     text-align: center;
@@ -139,10 +98,13 @@ input.inputlogin::placeholder {
     font-size: 14px;
 }
 
+
+
+
 .adminloginbutton{
     position: absolute;
     align-self: center;     /* 👈 centers it horizontally */
-    margin-top: 213px;
+    margin-top: 250px;
     margin-bottom: 0%;
     padding: 6px 6px;
     font-size: 10px;
@@ -152,5 +114,6 @@ input.inputlogin::placeholder {
     background-color: #4F6F52;
     color: #FFFFFF;
 }
+
 
 
