@@ -9,21 +9,25 @@
     <img class="lamp" src="./images/lamp.png">
 
     <div class="login_palete">
-        <form method="post">
+        <form id="formlogin">
             <div class="login_contents">
                 <h2 class="userlogintext"><b>User Login</b></h2>
-                <label>Username</label>
-                <input name="Username" class="inputlogin" type=text placeholder="">
+                <label>Email</label>
+                <input name="Email" id="email" class="inputlogin" type=text required placeholder="">
                 <label>Password</label>
-                <input name="Password" class="inputlogin" type="password" placeholder="">
+                <input name="Password" id="password" class="inputlogin" type="password" required placeholder="">
                 <a href="signup.html" class="signuppage">Don't have an account? Sign in</a>
-                <input class="submitbutton" type="submit" value="Log in">
-                <a class="adminloginbutton" href="adminlogin.html">Admin Log in</a>
+                <button class="submitbutton" type="button" onclick="loginUser()">Log in</button>
             </div>
         </form>
     </div>
+    <div class="clicktext">
+        Click on the Lamp!!!
+    </div>
 
     <script src="lamplight.js"></script>
+    <script src="adminlogin.js"></script>
+    <script src="login.js"></script>
 
 </body>
 </html>

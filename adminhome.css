@@ -1,0 +1,165 @@
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f2f2f2;
+    margin: 0;
+}
+
+.container {
+    width: 85%;
+    margin: auto;
+    padding-bottom: 50px;
+}
+
+/* HEADER */
+.header {
+    background: #2e7d32;
+    padding: 30px 0 25px;
+    border-radius: 0 0 18px 18px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+
+.header h1 {
+    text-align: center;
+    margin: 0;
+    color: white;
+}
+
+.tagline {
+    text-align: center;
+    color: #e8f5e9;
+    margin-top: 6px;
+    letter-spacing: 2px;
+    font-size: 14px;
+}
+
+/* SEARCH + ICONS */
+.tools-bar {
+    margin: 25px auto;
+    background: white;
+    padding: 15px 20px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.tools-bar input {
+    flex: 1;
+    padding: 12px 16px;
+    border-radius: 30px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.action-icons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.action-icons button {
+    background: #2e7d32;
+    color: white;
+    border: none;
+    height: 42px;
+    padding: 0 24px;        
+    border-radius: 10px;  
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.action-icons button:hover {
+    background: #1b5e20;
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+/*Buy Button*/
+.buy-btn {
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 8px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.buy-btn:hover {
+    background-color: #1b5e20;
+    transform: scale(1.05);
+}
+
+/* CATEGORY SLIDER */
+.slider {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.slider button {
+    padding: 10px 22px;
+    border-radius: 30px;
+    border: none;
+    background: #e0e0e0;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.slider button.active {
+    background: #2e7d32;
+    color: white;
+}
+
+/* PRODUCTS */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 30px;
+}
+
+.product {
+    background: white;
+    padding: 18px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    transition: 0.3s;
+}
+
+.product img {
+    width: 100%;
+    max-height: 200px; 
+    object-fit: contain;
+    border-radius: 16px;
+    margin: 0 auto;
+}
+
+.product h3 {
+    color: #2e7d32;
+    margin: 12px 0 6px;
+}
+
+.price {
+    font-weight: bold;
+    color: #1b5e20;
+}
+.stock-btn{
+    background: #2e7d32;
+    color: white;
+    border: none;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 6px;
+    font-weight: bold;
+}
