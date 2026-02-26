@@ -1,6 +1,7 @@
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 let billingHistory = JSON.parse(localStorage.getItem("billingHistory")) || [];
 
+
 function displayCart() {
 
     cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -36,6 +37,7 @@ function displayCart() {
 }
 
 
+
 function changeQty(index, change) {
 
     cart[index].quantity += change;
@@ -48,7 +50,13 @@ function changeQty(index, change) {
     displayCart();
 }
 
+
+
+//CHECKOUT
 function checkout() {
+
+    cart = JSON.parse(localStorage.getItem("cart")) || [];
+    billingHistory = JSON.parse(localStorage.getItem("billingHistory")) || [];
 
     if (cart.length === 0) {
         alert("Cart is empty!");
@@ -58,9 +66,13 @@ function checkout() {
     let billTotal = cart.reduce((sum, item) =>
         sum + item.price * item.quantity, 0);
 
+    let now = new Date();
+
     billingHistory.push({
-        items: cart,
-        total: billTotal
+        items: JSON.parse(JSON.stringify(cart)), // deep copy
+        total: billTotal,
+        date: now.toLocaleDateString(),
+        time: now.toLocaleTimeString()
     });
 
     localStorage.setItem("billingHistory", JSON.stringify(billingHistory));
@@ -73,21 +85,83 @@ function checkout() {
     displayBillingHistory();
 }
 
+
+
+//BILL DISPLAY
 function displayBillingHistory() {
+
+    billingHistory = JSON.parse(localStorage.getItem("billingHistory")) || [];
 
     let container = document.getElementById("billingHistory");
     container.innerHTML = "";
 
-    billingHistory.forEach((bill, index) => {
+    let latestBills = billingHistory.slice(-3).reverse();
+
+    latestBills.forEach((bill, index) => {
+
+        let itemsHTML = "";
+
+        bill.items.forEach(item => {
+            itemsHTML += `
+                <p>${item.name} (x${item.quantity}) - ₹${item.price * item.quantity}</p>
+            `;
+        });
 
         container.innerHTML += `
-        <div style="border:1px solid gray; margin:10px; padding:10px;">
-            <h4>Bill ${index + 1}</h4>
-            <p>Total: ₹${bill.total}</p>
+        <div style="border:1px solid gray; margin:10px; padding:15px;">
+            <h3>GreenCart: Online Organic Grocery Store</h3>
+            <p>Date: ${bill.date}</p>
+            <p>Time: ${bill.time}</p>
+            <hr>
+            ${itemsHTML}
+            <hr>
+            <strong>Total: ₹${bill.total}</strong>
+            <br><br>
+            <button class="invoice-btn" onclick="downloadInvoice(${billingHistory.length - 1 - index})">
+                Download Invoice
+            </button>
         </div>
         `;
     });
 }
+
+
+
+// DOWNLOAD INVOICE
+function downloadInvoice(index) {
+
+    billingHistory = JSON.parse(localStorage.getItem("billingHistory")) || [];
+    let bill = billingHistory[index];
+
+    let invoiceContent = `
+GreenCart: Online Organic Grocery Store
+----------------------------------------
+Date: ${bill.date}
+Time: ${bill.time}
+
+Items Ordered:
+`;
+
+    bill.items.forEach(item => {
+        invoiceContent += `
+${item.name} (x${item.quantity}) - ₹${item.price * item.quantity}
+`;
+    });
+
+    invoiceContent += `
+----------------------------------------
+Total: ₹${bill.total}
+`;
+
+    let blob = new Blob([invoiceContent], { type: "text/plain" });
+    let link = document.createElement("a");
+
+    link.href = URL.createObjectURL(blob);
+    link.download = "GreenCart_Invoice.txt";
+    link.click();
+}
+
+
 
 displayCart();
 displayBillingHistory();

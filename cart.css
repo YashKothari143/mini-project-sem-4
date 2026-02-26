@@ -379,3 +379,22 @@ body {
     font-weight: 700;
     color: #1b5e20;
 }
+.invoice-btn {
+    background-color: #2e7d32;
+    color: white;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.invoice-btn:hover {
+    background-color: #1b5e20;
+    transform: scale(1.05);
+}
+
+.invoice-btn:active {
+    transform: scale(0.98);
+}
