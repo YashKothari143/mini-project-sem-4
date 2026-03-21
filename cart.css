@@ -398,3 +398,94 @@ body {
 .invoice-btn:active {
     transform: scale(0.98);
 }
+/* 
+table  */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: #2e7d32;
+    color: white;
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+.placeorder-btn{
+    
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 8px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.placeorder-btn:hover {
+    background-color: #1b5e20;
+    transform: scale(1.05);
+}
+/* BUTTON BASE */
+button {
+    cursor: pointer;
+    border: none;
+    padding: 6px 10px;
+    margin: 2px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+/* ➕ BUTTON */
+button[value="increase"],
+button:contains("➕") {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* ➖ BUTTON */
+button[value="decrease"],
+button:contains("➖") {
+    background-color: #e53935;
+    color: white;
+}
+
+/* HOVER EFFECT */
+button:hover {
+    opacity: 0.8;
+}
+
+.order-box {
+    background: #f1f8e9;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+
+.order-box h3 {
+    color: #2e7d32;
+}
+
+.download-btn {
+    background-color: #2e7d32;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.download-btn:hover {
+    background-color: #1b5e20;
+}

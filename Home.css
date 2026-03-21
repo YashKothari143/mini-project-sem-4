@@ -228,3 +228,20 @@ body {
     box-shadow: none !important;
     transform: none !important;
 }
+
+/* cart css */
+.cart-btn {
+    font-size: 22px;
+    text-decoration: none;
+    background: #2e7d32;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 50%;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.cart-btn:hover {
+    background: #1b5e20;
+    transform: scale(1.1);
+}
