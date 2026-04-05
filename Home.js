@@ -1,6 +1,3 @@
-
-
-
 function filterProducts(category, btn) {
     let products = document.querySelectorAll('.product');
     let buttons = document.querySelectorAll('.slider button');
@@ -33,3 +30,15 @@ document.getElementById("searchInput").addEventListener("keyup", function () {
         }
     });
 });
+function toggleMenu(){
+    let menu = document.getElementById("menu");
+    menu.style.display = (menu.style.display === "none") ? "block" : "none";
+}
+// update-msg
+
+setTimeout(() => {
+    let msg = document.querySelector(".success-msg");
+    if(msg) msg.style.display = "none";
+}, 3000);
+
+

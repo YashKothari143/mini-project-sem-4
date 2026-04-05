@@ -1,6 +1,10 @@
 <?php
+
+use function Safe\msg_send;
+
 session_start();
 include("database.php");
+$category = $_SESSION['category'] ?? "vegetable";
 
 // check login
 if(!isset($_SESSION['user_id'])){
@@ -34,7 +38,7 @@ if(mysqli_num_rows($check) > 0){
         SET quantity = quantity + 1
         WHERE user_id = $user_id AND product_id = $product_id
     ");
-    echo "<script>alert('item updated successfully')</script>";
+    
 
     if(!$update){
         die("UPDATE ERROR: " . mysqli_error($conn));
@@ -50,10 +54,9 @@ if(mysqli_num_rows($check) > 0){
         VALUES ($user_id, $product_id, 1)
     ");
     
-    echo "<script>alert('added to cart successfully')</script>";
+    
 }
 
-
-header("");
+header("Location: Home.php?cat=$category&msg=added");
 exit();
 ?>

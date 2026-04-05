@@ -61,6 +61,6 @@ while($row = mysqli_fetch_assoc($result)){
 mysqli_query($conn, "DELETE FROM cart WHERE user_id = $user_id");
 
 // redirect back
-header("Location: cart.php");
+header("Location: cart.php?msg=success");
 exit();
 ?>

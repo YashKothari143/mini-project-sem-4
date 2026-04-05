@@ -22,6 +22,12 @@ $user_id = $_SESSION['user_id'];
 </head>
 
 <body>
+<!-- this message pops when user places order thats why this part is her -->
+    <?php if(isset($_GET['msg']) && $_GET['msg']=="success"){ ?>
+    <div class="success-msg">Order placed successfully<BR>
+                   <H1> ✅</H1>
+    </div>
+    <?php } ?>
 
 <div class="nav">
     <div class="page-nav">
@@ -153,6 +159,6 @@ while($row = mysqli_fetch_assoc($result)){
     <?php
 }
 ?>
-
+<script src="cart.js"></script>
 </body>
 </html>

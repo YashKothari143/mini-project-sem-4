@@ -1,6 +1,7 @@
 <?php
 session_start();
 include("database.php");
+$username = isset($_SESSION['username']) ? $_SESSION['username'] : "Guest";
 
 require 'vendor/autoload.php'; // or dompdf/autoload.inc.php
 
@@ -59,6 +60,7 @@ td {
 </style>";
 $html = "
 <h2>GreenCart Invoice</h2>
+<p>Name: {$username}</p>
 <p>Order ID: {$order['id']}</p>
 <p>Date: {$order['date_and_time']}</p>
 

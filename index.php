@@ -9,6 +9,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     $email = $_POST["email"] ?? "";
     $password = $_POST["password"] ?? "";
 
+    if($email === "admin@gmail.com" && $password === "admin123"){
+    header("Location: adminhome.php");
+    exit();
+}
+
     $sql = "SELECT * FROM register WHERE email='$email'";
     $result = mysqli_query($conn,$sql);
 
@@ -16,9 +21,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     {
         $row = mysqli_fetch_assoc($result);
 
+
         if(password_verify($password,$row["password"]))
         {
             $_SESSION['user_id'] = $row['id'];
+            $_SESSION['username'] = $row['username'];
             header("Location: Home.php");
             exit();
         }
@@ -33,7 +40,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     }
 }
 
-mysqli_close($conn);
 ?>
 <html>
     <head>

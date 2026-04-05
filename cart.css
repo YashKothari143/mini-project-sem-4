@@ -489,3 +489,64 @@ button:hover {
 .download-btn:hover {
     background-color: #1b5e20;
 }
+/* updated-msg */
+.success-msg {
+    position: absolute;
+    top: 281px;          /* slight adjust */
+    right: 600px;
+
+    background: linear-gradient(135deg, #d4edda, #a5d6a7);
+    color: #1b5e20;
+
+    padding: 18px 26px;   /* BIGGER padding */
+    border-radius: 14px;
+
+    text-align: center;
+    font-weight: 600;
+    font-size: 16px;      /* bigger text */
+    line-height: 1.5;
+
+    border-left: 6px solid #2e7d32;
+
+    box-shadow: 0 12px 28px rgba(0,0,0,0.2);
+
+    min-width: 260px;     /* makes it wider */
+
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+/* Make heading bigger */
+.success-msg b {
+    font-size: 18px;
+    display: block;
+}
+
+/* MAKE TICK BIG 🔥 */
+.success-msg br + * {
+    font-size: 32px;      /* bigger tick */
+    display: inline-block;
+    margin-top: 8px;
+}
+
+/* Hover effect */
+.success-msg:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 16px 35px rgba(0,0,0,0.3);
+}
+
+/* Smooth animation */
+.success-msg {
+    animation: fadeSlide 0.35s ease;
+}
+
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
