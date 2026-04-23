@@ -35,7 +35,9 @@ $username = $_SESSION['username'] ?? "Admin";
 
     <!-- SEARCH + ICONS -->
     <div class="tools-bar" style="background-color: #c8e6c9;">
-        <input type="text" id="searchInput" placeholder="Search organic products...">
+        <input type="text" id="searchInput" 
+             placeholder="Search organic products..." 
+            onkeyup="filterProducts()">
             <form action="index.php" method="post">
                 <button type="button" class="cart-btn" onclick="toggleMenu()"><span style="font-size:20px">👤</span></button>
 

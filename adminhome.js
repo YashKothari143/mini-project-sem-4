@@ -1,10 +1,18 @@
-function filterProducts(category, btn) {
+function filterProducts(category = null, btn = null) {
     let products = document.querySelectorAll('.product');
     let buttons = document.querySelectorAll('.slider button');
 
-    // Active button
-    buttons.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
+    // Handle active button click
+    if (btn) {
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+    }
+
+    // Always detect active category
+    let activeBtn = document.querySelector('.slider .active');
+    if (activeBtn) {
+        category = activeBtn.innerText.toLowerCase().slice(0, -1);
+    }
 
     let searchValue = document.getElementById("searchInput").value.toLowerCase();
 
@@ -14,10 +22,12 @@ function filterProducts(category, btn) {
         let matchesSearch = productName.includes(searchValue);
         let matchesCategory = product.classList.contains(category);
 
-        if (matchesSearch && matchesCategory) {
-            product.style.display = "block";
+        if (searchValue === "") {
+            // Only category filter
+            product.style.display = matchesCategory ? "block" : "none";
         } else {
-            product.style.display = "none";
+            // Search across ALL categories (best UX)
+            product.style.display = matchesSearch ? "block" : "none";
         }
     });
 }
